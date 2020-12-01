@@ -10,14 +10,14 @@ import Bar from '../styles/BarStyled';
 const Footer = () => {
 
   return (
-    <Bar>
-      <Navbar className='justify-content-between' expand='lg'>
-        <Nav>
+    <footer>
+      <Bar>
+        <Navbar className='justify-content-around' expand='lg'>
           <Nav.Link href='https://www.theodinproject.com/' target='_blank'>The Odin Project</Nav.Link>
           <Nav.Link href='https://github.com/joan-kii?tab=repositories' target='_blank'>joankii's GitHub</Nav.Link>
-        </Nav>
-      </Navbar>  
-    </Bar>
+        </Navbar>  
+      </Bar>
+    </footer>
   )
 };
 

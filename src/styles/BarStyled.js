@@ -3,8 +3,16 @@ import styled from 'styled-components';
 const Bar = styled.div`
   color: white;
   background: #457b9d;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .navbar-brand:hover {
+    color: white;
+  }
 
   a {
     color: white;
@@ -12,11 +20,13 @@ const Bar = styled.div`
   }
 
   a:hover {
-    text-decoration: none;
+    text-decoration-line: underline overline;
+    text-decoration-style: double;
   }
 
   h5 {
     margin-right: 10px;
+    margin-bottom: 0;
   }
   `;
 
