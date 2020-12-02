@@ -12,7 +12,7 @@ const Bar = styled.div`
 
   .navbar-brand:hover {
     color: white;
-  }
+  } 
 
   a {
     color: white;

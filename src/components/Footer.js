@@ -10,7 +10,7 @@ import Bar from '../styles/BarStyled';
 const Footer = () => {
 
   return (
-    <footer>
+    <footer style={{position: 'fixed', bottom: 0, width: '100%'} }>
       <Bar>
         <Navbar className='justify-content-around' expand='lg'>
           <Nav.Link href='https://www.theodinproject.com/' target='_blank'>The Odin Project</Nav.Link>
