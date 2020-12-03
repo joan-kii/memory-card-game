@@ -10,16 +10,16 @@ import cat9 from './cat9.jpg';
 import cat10 from './cat10.jpg';
 
 const catsList = [
-  {img: cat1, clicked: false},
-  {img: cat2, clicked: false},
-  {img: cat3, clicked: false},
-  {img: cat4, clicked: false},
-  {img: cat5, clicked: false},
-  {img: cat6, clicked: false},
-  {img: cat7, clicked: false},
-  {img: cat8, clicked: false},
-  {img: cat9, clicked: false},
-  {img: cat10, clicked: false}
+  {img: cat1, isClicked: false},
+  {img: cat2, isClicked: false},
+  {img: cat3, isClicked: false},
+  {img: cat4, isClicked: false},
+  {img: cat5, isClicked: false},
+  {img: cat6, isClicked: false},
+  {img: cat7, isClicked: false},
+  {img: cat8, isClicked: false},
+  {img: cat9, isClicked: false},
+  {img: cat10, isClicked: false}
 ];
 
 export default catsList;
