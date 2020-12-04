@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Row from 'react-bootstrap/Row';
 import CardImage from './CardImage';
+import RowContainer from './RowContainer';
 import catsList from '../assets/catsList';
 
 const namesList = ['Missy', 'Lissy', 'Sissy', 'Wissy',
@@ -47,9 +47,12 @@ const Sandbox = () => {
 
   return (
     <main> 
-      <Row>
-        {cards}
-      </Row>
+      <RowContainer>
+        {cards.slice(0, 5)}
+      </RowContainer>
+      <RowContainer>
+        {cards.slice(5, 10)}
+      </RowContainer>
     </main>
   )
 }
