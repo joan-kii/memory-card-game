@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const CardStyled = styled.div`
   margin-top: 20px;
   box-shadow: 5px 2px 20px #457b9d;

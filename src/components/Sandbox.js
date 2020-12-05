@@ -1,8 +1,12 @@
+// Imports
+
 import React, { useState } from 'react';
 import CardImage from './CardImage';
 import GameOver from './GameOver';
 import RowStyled from '../styles/RowStyled';
 import catsList from '../assets/catsList';
+
+// Functions
 
 const namesList = ['Missy', 'Lissy', 'Sissy', 'Wissy',
   'Tissy', 'Kissy', 'Dissy', 'Fissy', 'Rissy', 'Nissy'];
@@ -20,12 +24,12 @@ const Sandbox = (props) => {
 
   const [images, setImages] = useState(catsList);
   const [names, setNames] = useState(namesList);
-  const [isGameOver, setIsGameOver] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   const handleClick = (isClicked, index) => {
 
     if (isClicked) {
-      gameOver();
+      setModalShow(true);
       shuffleArray(images);
       setImages(images);
       shuffleArray(names);
@@ -34,22 +38,23 @@ const Sandbox = (props) => {
       props.incrementScore();
       images[index].isClicked = true;
       shuffleArray(images);
-      setImages(images);;
+      setImages(images);
       shuffleArray(names);
       setNames(names);
     }
   };
 
   const gameOver = () => {
-    setIsGameOver(true);
-    setTimeout(() => {
-      setIsGameOver(false);
-      props.resetScore();
-    }, 3000)
+    setModalShow(false);
+    props.resetScore();
+    images.map((img) => {
+      img.isClicked = false;
+      setImages(images);
+      return images;
+    })
   };
 
   const cards = images.map((img, index) => (
-
     <CardImage 
       key={index}
       path={img.img}
@@ -57,11 +62,12 @@ const Sandbox = (props) => {
       onClick={() => handleClick(img.isClicked, index)} />
   ));
 
-
   return (
     <main> 
-      {isGameOver ? 
-      <GameOver score={props.score} /> :
+      <GameOver 
+        score={props.score} 
+        show={modalShow}
+        onHide={() => gameOver()} />
         <div>
           <RowStyled>
             {cards.slice(0, 5)}
@@ -70,7 +76,6 @@ const Sandbox = (props) => {
             {cards.slice(5, 10)}
           </RowStyled>
         </div>
-      }
     </main>
   )
 }

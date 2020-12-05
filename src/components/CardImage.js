@@ -1,6 +1,11 @@
+// Imports
+
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import CardStyled from '../styles/CardStyled';
+
+
+// Function
 
 const CardImage = (props) => {
 
